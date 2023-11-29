@@ -15,6 +15,7 @@
 		C68F05CC2B1703A00034148A /* GroundStationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F05CB2B1703A00034148A /* GroundStationTests.swift */; };
 		C68F05D62B1703A00034148A /* GroundStationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F05D52B1703A00034148A /* GroundStationUITests.swift */; };
 		C68F05D82B1703A00034148A /* GroundStationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F05D72B1703A00034148A /* GroundStationUITestsLaunchTests.swift */; };
+		C68F05E62B171FB00034148A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F05E52B171FB00034148A /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		C68F05D12B1703A00034148A /* GroundStationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroundStationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68F05D52B1703A00034148A /* GroundStationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundStationUITests.swift; sourceTree = "<group>"; };
 		C68F05D72B1703A00034148A /* GroundStationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundStationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C68F05E42B1719100034148A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C68F05E52B171FB00034148A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 		C68F05AA2B17039E0034148A = {
 			isa = PBXGroup;
 			children = (
+				C68F05E42B1719100034148A /* README.md */,
 				C68F05B52B17039E0034148A /* GroundStation */,
 				C68F05CA2B1703A00034148A /* GroundStationTests */,
 				C68F05D42B1703A00034148A /* GroundStationUITests */,
@@ -101,6 +105,7 @@
 				C68F05B62B17039E0034148A /* GroundStationApp.swift */,
 				C68F05B82B17039E0034148A /* GroundStationDocument.swift */,
 				C68F05BA2B17039E0034148A /* ContentView.swift */,
+				C68F05E52B171FB00034148A /* MapView.swift */,
 				C68F05BC2B17039F0034148A /* Assets.xcassets */,
 				C68F05C12B17039F0034148A /* Info.plist */,
 				C68F05C22B17039F0034148A /* GroundStation.entitlements */,
@@ -265,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C68F05B92B17039E0034148A /* GroundStationDocument.swift in Sources */,
+				C68F05E62B171FB00034148A /* MapView.swift in Sources */,
 				C68F05B72B17039E0034148A /* GroundStationApp.swift in Sources */,
 				C68F05BB2B17039E0034148A /* ContentView.swift in Sources */,
 			);
