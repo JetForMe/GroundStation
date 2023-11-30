@@ -162,42 +162,50 @@ LZSerialPort
 			self.queue = DispatchQueue(label: "Port Queue \(self.path)", qos: .background)
 		}
 		
-		Self.logger.info("Starting read")
-		
-		self.channel?.read(offset: 0,
-							length: 1024,
-							queue: self.recieveCallbackQueue!,
-							ioHandler:
-							{ done, dd, error in
-								if error != 0
-								{
-									Self.logger.info("Receive called with error \(error)")
-									self.receiveCallback?(done, nil, .posixError(error))
-									return
-								}
-								
-								if let dd = dd
-								{
-									let data = Data(dd)
-									Self.logger.info("Received data, done: \(done), \(data.count) bytes")
-									self.receiveCallback?(done, data, nil)
-									return
-								}
-								else
-								{
-									Self.logger.info("Receive called, no data, done: \(done)")
-									self.receiveCallback?(done, nil, nil)
-									return
-								}
-							})
+		self.channelQueue.async
+		{
+			Self.logger.info("Starting read")
+			
+			self.channel?.read(offset: 0,
+								length: 1024,
+								queue: self.recieveCallbackQueue!,
+								ioHandler:
+								{ done, dd, error in
+									if error != 0
+									{
+										Self.logger.info("Receive called with error \(error)")
+										self.receiveCallback?(done, nil, .posixError(error))
+										return
+									}
+									
+									if let dd = dd
+									{
+										let data = Data(dd)
+										Self.logger.info("Received data, done: \(done), \(data.count) bytes")
+										self.receiveCallback?(done, data, nil)
+										return
+									}
+									else
+									{
+										Self.logger.info("Receive called, no data, done: \(done)")
+										self.receiveCallback?(done, nil, nil)
+										return
+									}
+								})
+			
+			Self.logger.info("read() returned")
+		}
 	}
 	
 	func
 	write(data inData: Data)
 	{
-		let dd = DispatchData(data: inData)
-		self.channel?.write(offset: 0, data: dd, queue: DispatchQueue.main) { done, data, error in
-			print("data written: \(done)")
+		self.channelQueue.async
+		{
+			let dd = DispatchData(data: inData)
+			self.channel?.write(offset: 0, data: dd, queue: self.channelQueue) { done, data, error in
+				print("data written: \(done)")
+			}
 		}
 	}
 	
