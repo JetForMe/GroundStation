@@ -16,6 +16,8 @@
 		C68F05D62B1703A00034148A /* GroundStationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F05D52B1703A00034148A /* GroundStationUITests.swift */; };
 		C68F05D82B1703A00034148A /* GroundStationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F05D72B1703A00034148A /* GroundStationUITestsLaunchTests.swift */; };
 		C68F05E62B171FB00034148A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F05E52B171FB00034148A /* MapView.swift */; };
+		C68F05E92B1740240034148A /* SwiftSerial in Frameworks */ = {isa = PBXBuildFile; productRef = C68F05E82B1740240034148A /* SwiftSerial */; };
+		C68F05EC2B18766D0034148A /* Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68F05EB2B18766D0034148A /* Serial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		C68F05D72B1703A00034148A /* GroundStationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundStationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C68F05E42B1719100034148A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C68F05E52B171FB00034148A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C68F05EA2B1746FF0034148A /* SwiftSerial */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftSerial; path = ../../SwiftSerial; sourceTree = "<group>"; };
+		C68F05EB2B18766D0034148A /* Serial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68F05E92B1740240034148A /* SwiftSerial in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,7 @@
 				C68F05B52B17039E0034148A /* GroundStation */,
 				C68F05CA2B1703A00034148A /* GroundStationTests */,
 				C68F05D42B1703A00034148A /* GroundStationUITests */,
+				C68F05EA2B1746FF0034148A /* SwiftSerial */,
 				C68F05B42B17039E0034148A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +112,7 @@
 				C68F05B82B17039E0034148A /* GroundStationDocument.swift */,
 				C68F05BA2B17039E0034148A /* ContentView.swift */,
 				C68F05E52B171FB00034148A /* MapView.swift */,
+				C68F05EB2B18766D0034148A /* Serial.swift */,
 				C68F05BC2B17039F0034148A /* Assets.xcassets */,
 				C68F05C12B17039F0034148A /* Info.plist */,
 				C68F05C22B17039F0034148A /* GroundStation.entitlements */,
@@ -155,6 +162,9 @@
 			dependencies = (
 			);
 			name = GroundStation;
+			packageProductDependencies = (
+				C68F05E82B1740240034148A /* SwiftSerial */,
+			);
 			productName = GroundStation;
 			productReference = C68F05B32B17039E0034148A /* GroundStation.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +237,9 @@
 				Base,
 			);
 			mainGroup = C68F05AA2B17039E0034148A;
+			packageReferences = (
+				C68F05E72B1740240034148A /* XCRemoteSwiftPackageReference "SwiftSerial" */,
+			);
 			productRefGroup = C68F05B42B17039E0034148A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68F05EC2B18766D0034148A /* Serial.swift in Sources */,
 				C68F05B92B17039E0034148A /* GroundStationDocument.swift in Sources */,
 				C68F05E62B171FB00034148A /* MapView.swift in Sources */,
 				C68F05B72B17039E0034148A /* GroundStationApp.swift in Sources */,
@@ -595,6 +609,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C68F05E72B1740240034148A /* XCRemoteSwiftPackageReference "SwiftSerial" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yeokm1/SwiftSerial";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C68F05E82B1740240034148A /* SwiftSerial */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C68F05E72B1740240034148A /* XCRemoteSwiftPackageReference "SwiftSerial" */;
+			productName = SwiftSerial;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C68F05AB2B17039E0034148A /* Project object */;
 }

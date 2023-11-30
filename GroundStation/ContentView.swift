@@ -34,6 +34,31 @@ ContentView: View
 			}
 		}
 		.padding()
+		.toolbar
+		{
+			Button(action: { try? self.document.toggleConnection() })	//	TODO: Report errors
+			{
+				if self.document.connected
+				{
+					Image(systemName: "arrow.up.right.and.arrow.down.left")
+				}
+				else
+				{
+					Image(systemName: "arrow.down.left.and.arrow.up.right")
+				}
+			}
+			
+			if self.document.noTelemetryReceived
+			{
+				Image(systemName: "exclamationmark.triangle.fill")
+					.foregroundColor(.yellow)
+			}
+			else
+			{
+				Image(systemName: "checkmark.circle.fill")
+					.foregroundColor(.green)
+			}
+		}
 	}
 	
 	
